@@ -15,13 +15,8 @@ const HomeScree = ({ navigation }) => {
     setRegisterCars(RegisterCars)
     getUserData();
   }, []);
-  const getUserData = async () => {
-    const userData = await AsyncStorage.getItem('userData');
-    if (userData) {
-      setUserDetails(JSON.parse(userData));
-    }
-  };
 
+  // logout User
   const logout = () => {
     AsyncStorage.setItem(
       'userData',
@@ -29,6 +24,7 @@ const HomeScree = ({ navigation }) => {
     );
     navigation.navigate('LoginScreen');
   };
+  // Delete Register Car
   const deleteCar = (item) => {
     let updatedCars = registerCars.filter((i) => i.registrationNo !== item.registrationNo)
     setRegisterCars(updatedCars);
@@ -68,6 +64,8 @@ const HomeScree = ({ navigation }) => {
       </View>
     )
   }
+
+  // Add Car in the Existing List
   const addCars = (item) => {
     setModalVisible(!modalVisible)
     let updatedCars = registerCars;
@@ -79,6 +77,7 @@ const HomeScree = ({ navigation }) => {
     updatedCars.push(item)
     setRegisterCars(updatedCars)
   }
+  // Update the Car
   const updateCars = (item) => {
     const index = registerCars.findIndex((i) => i.registrationNo === item.registrationNo);
     const updatedData = {

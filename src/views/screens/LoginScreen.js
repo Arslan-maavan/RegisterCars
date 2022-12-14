@@ -8,7 +8,7 @@ import AsyncStorage from '@react-native-async-storage/async-storage';
 const LoginScreen = ({ navigation }) => {
   const [inputs, setInputs] = React.useState({ email: '', password: '' });
   const [errors, setErrors] = React.useState({});
-
+// Validate Input Fields
   const validate = async () => {
     Keyboard.dismiss();
     let isValid = true;
@@ -24,7 +24,7 @@ const LoginScreen = ({ navigation }) => {
       login();
     }
   };
-
+  // Check Credentials 
   const login = async () => {
 
     let userData = await AsyncStorage.getItem('userData');

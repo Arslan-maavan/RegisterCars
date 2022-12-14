@@ -21,6 +21,7 @@ const AddCars = ({ addCars, editCars, updateCars, backBtn }) => {
         setEditCar(editCars)
     },
         [])
+        // Validate Input Fields
     const validate = () => {
         Keyboard.dismiss();
         if (editCar) { updateCars(editCar); return }
@@ -53,9 +54,11 @@ const AddCars = ({ addCars, editCars, updateCars, backBtn }) => {
 
         }
     };
+    // Set Errors 
     const handleError = (error, input) => {
         setErrors(prevState => ({ ...prevState, [input]: error }));
     };
+    //Set Values
     const handleOnchange = (text, input) => {
         if (editCar) {
             setEditCar(prevState => ({ ...prevState, [input]: text }));

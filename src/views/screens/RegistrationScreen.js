@@ -23,7 +23,7 @@ const RegistrationScreen = ({navigation}) => {
   });
   const [errors, setErrors] = React.useState({});
   const [loading, setLoading] = React.useState(false);
-
+//Validate Inputs Field
   const validate = () => {
     Keyboard.dismiss();
     let isValid = true;
@@ -58,7 +58,7 @@ const RegistrationScreen = ({navigation}) => {
       register();
     }
   };
-
+  //Register User
   const register = () => {
       try {
         setLoading(false);
