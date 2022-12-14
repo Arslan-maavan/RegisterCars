@@ -13,7 +13,6 @@ const HomeScree = ({ navigation }) => {
 
   React.useEffect(() => {
     setRegisterCars(RegisterCars)
-    getUserData();
   }, []);
 
   // logout User
