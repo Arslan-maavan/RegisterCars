@@ -1,4 +1,4 @@
-## GUIDE
+## Details
 Firstly Register The user Async Storage is used to Store the Data
 Login with the given credentials
 Home page Have Flat List to show the Register Cars List
